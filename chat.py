@@ -27,8 +27,10 @@ def write_file(filename, refactorData):
 		for line in refactorData:
 			f.write(line)
 
+# 執行內容
+def main():
+	chatData = read_file('input.txt')
+	refactorData = chatFormat(chatData, 'Allen', 'Tom')
+	write_file('output.txt', refactorData)
 
-
-chatData = read_file('input.txt')
-refactorData = chatFormat(chatData, 'Allen', 'Tom')
-write_file('output.txt', refactorData)
+main()
