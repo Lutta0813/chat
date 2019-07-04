@@ -9,16 +9,16 @@ def read_file(filename):
 # 改寫格式
 def chatFormat(chatData ,chater_name_1, chater_name_2):
 	refactorData = []
-	WhosTalking = None
+	whosTalking = None
 	for line in chatData:
 		if chater_name_1 in line:
-			WhosTalking = chater_name_1
+			whosTalking = chater_name_1
 			continue
 		elif chater_name_2 in line:
-			WhosTalking = chater_name_2
+			whosTalking = chater_name_2
 			continue
 		else:
-			refactorData.append(WhosTalking + ': ' + line)
+			refactorData.append(whosTalking + ': ' + line)
 	return refactorData
 
 # 寫入檔案
