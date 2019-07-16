@@ -1,21 +1,21 @@
 # 讀取檔案
 def read_file(filename):
 	chatData = []
-	with open(filename, 'r') as f:
+	with open(filename, 'r') as f: # utf-8-s ig能消除記憶體讀取txt時的隱藏編碼
 		for line in f:
 			# print(line)
-			chatData.append(line)
+			chatData.append(line) #這裡我沒有添加.strip()來移除換行符號，之後添加進檔案就不用額外多寫\n
 	return chatData
 # 改寫格式
-def chatFormat(chatData ,chater_name_1, chater_name_2):
+def chatFormat(chatData ,user_name_1, user_name_2):
 	refactorData = []
 	whosTalking = None
 	for line in chatData:
-		if chater_name_1 in line:
-			whosTalking = chater_name_1
+		if user_name_1 in line:
+			whosTalking = user_name_1
 			continue
-		elif chater_name_2 in line:
-			whosTalking = chater_name_2
+		elif user_name_2 in line:
+			whosTalking = user_name_2
 			continue
 		else:
 			refactorData.append(whosTalking + ': ' + line)
